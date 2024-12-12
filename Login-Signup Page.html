@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Signup Page</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="Login-Signup Page.css" />
+
+    <!-- FontAwesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="dashboard.html" method="post">
+          <h1>Paws Up! 🐾</h1>
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Woof in</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="dashboard.html" method="post">
+          <h1>Woof in!🐾</h1>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <a href="#">Forgot your password?</a>
+          <button>Sign In</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back, Furiend!</h1>
+            <p>To stay in the pack, please log in with your paw-sonal info!</p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Furiend!</h1>
+            <p>
+              Enter your paw-sonal details and start your tail-wagging journey
+              with us
+            </p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Pawfect</p>
+    </footer>
+
+    <script src="Login-Signup Page.js"></script>
+  </body>
+</html>

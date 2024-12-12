@@ -1,0 +1,113 @@
+& when not (@fullScreen) {
+    padding-top: (@paddingTop * 1rem);
+    padding-bottom: (@paddingBottom * 1rem);
+  }
+  & when (@bg-type = "color") {
+    background-color: if(@transparentBg, transparent, @bg-value);
+  }
+  & when (@bg-type = 'image') {
+    background-image: url(@bg-value);
+  }
+  .mbr-fallback-image.disabled {
+    display: none;
+  }
+  .mbr-fallback-image {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    & when (@bg-type = 'video') {
+      background-image: url(@fallBackImage);
+    }
+  }
+  & when (@fullWidth) {
+    .container-fluid {
+      padding: 0 56px;
+      @media (max-width: 992px) {
+        padding: 0 22px;
+      }
+    }
+  }
+  .container {
+    @media (max-width: 992px) {
+      padding: 0 22px;
+    }
+  }
+  .row {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 -6px;
+    .card {
+      padding: 0 6px;
+      justify-content: center;
+    }
+    .title-wrapper {
+      position: absolute;
+      z-index: 1;
+      background-color: @title;
+      padding: 24px 80px;
+      border-radius: 80px;
+      width: fit-content;
+      @media (max-width: 992px) {
+        position: static;
+        padding: 32px;
+        width: 100%;
+      }
+      .mbr-section-title {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .image-wrapper {
+    margin-bottom: 12px;
+    img {
+      height: 560px;
+      width: 100%;
+      object-fit: cover;
+      @media (max-width: 992px) {
+        height: 350px;
+      }
+    }
+  }
+  .image-wrap {
+    margin-bottom: 12px;
+    img {
+      height: 560px;
+      width: 65%;
+      object-fit: cover;
+      @media (max-width: 992px) {
+        height: 350px;
+        width: 100%;
+      }
+    }
+  }
+  .content-wrapper {
+    padding: 55px 0;
+    @media (max-width: 992px) {
+      padding: 32px 0;
+    }
+    .mbr-desc {
+      margin-bottom: 32px;
+    }
+    .mbr-text {
+      margin-bottom: 22px;
+    }
+  }
+  .mbr-section-title {
+    color: #000000;
+    text-align: center;
+  }
+  .mbr-desc {
+    color: #000000;
+  }
+  .mbr-text {
+    color: #000000;
+  }
+  .mbr-text, .mbr-section-btn {
+    color: #000000;
+  }
+  

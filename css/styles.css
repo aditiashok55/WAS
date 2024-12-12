@@ -1,0 +1,142 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Agency FB", sans-serif;
+  line-height: 1.6;
+  background-color: #f9e6e6; /* Soft pink */
+  color: #333; /* Neutral text color */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #e63946; /* Soft red for links */
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #900c3f; /* Darker red */
+}
+
+/* Header */
+#header {
+  background-color: #1c1c1c; /* Deep black */
+  color: #f8d7da; /* Light pink text */
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#header .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#header ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#header li {
+  display: inline;
+  font-size: larger;
+}
+
+#header a {
+  color: #f8d7da; /* Light pink */
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#header a:hover {
+  background-color: #900c3f; /* Dark red */
+  color: #fff; /* White text on hover */
+}
+
+/* Main Sections */
+#who-are-we,
+#what-we-do,
+#how-to-onboard {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Logo Section */
+.logo-image {
+  max-height: 300px; /* Set the maximum height of the logo */
+  width: auto; /* Maintain the aspect ratio */
+  object-fit: contain; /* Ensure the logo fits within the specified dimensions */
+}
+
+/* Optional: Adjust spacing for the logo */
+.logo {
+  margin-right: 20px; /* Add spacing between logo and navigation */
+}
+
+
+.teal-bg {
+  background-color: #fce4ec; /* Soft pink */
+  color: #900c3f; /* Deep red for text */
+}
+
+.yellow-bg {
+  background-color: #f8d7da; /* Light pink */
+  color: #333; /* Neutral text color */
+}
+
+.section-heading h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1c1c1c; /* Black for headings */
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: #e63946; /* Vibrant red button */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid #900c3f; /* Dark red border */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #f8d7da; /* Light pink on hover */
+  color: #900c3f; /* Dark red text */
+}
+
+/* Footer */
+footer {
+  background-color: #1c1c1c; /* Deep black */
+  color: #f8d7da; /* Light pink text */
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #header .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #header ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

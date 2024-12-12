@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dog Collar Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f6f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #88c1d0;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .container {
+            margin: 2rem auto;
+            max-width: 1200px;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333333;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-around;
+        }
+
+        .card {
+            flex: 1;
+            padding: 1.5rem;
+            text-align: center;
+            background-color: #e3f2fd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #0077b6;
+        }
+
+        .map {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Smart Dog Collar Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <h2>Dashboard</h2>
+        <div class="dashboard">
+            <div class="card">
+                <h3>Stress Levels</h3>
+                <canvas id="stressChart"></canvas>
+            </div>
+
+            <div class="card">
+                <h3>Whining Frequency</h3>
+                <canvas id="whiningChart"></canvas>
+            </div>
+
+            <div class="card">
+                <h3>Location</h3>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+    <script>
+        // Stress Levels Chart
+        const stressCtx = document.getElementById('stressChart').getContext('2d');
+        new Chart(stressCtx, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                datasets: [{
+                    label: 'Stress Level',
+                    data: [20, 30, 25, 40, 35],
+                    borderColor: '#0077b6',
+                    backgroundColor: 'rgba(0, 119, 182, 0.2)',
+                    fill: true,
+                }],
+            },
+        });
+
+        // Whining Frequency Chart
+        const whiningCtx = document.getElementById('whiningChart').getContext('2d');
+        new Chart(whiningCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                datasets: [{
+                    label: 'Whining Count',
+                    data: [5, 3, 8, 6, 7],
+                    backgroundColor: '#ff8c42',
+                }],
+            },
+        });
+
+        // Initialize Google Maps
+        function initMap() {
+            const location = { lat: -25.344, lng: 131.036 }; // Example coordinates
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: location,
+            });
+            new google.maps.Marker({ position: location, map: map });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+</html>
